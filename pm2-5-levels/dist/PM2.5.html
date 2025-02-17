@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>PM2.5 Levels</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8' />
+  <title>Toggle layers</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <!-- Mapbox JS API !-->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
+  <!-- Mapbox CSS!-->
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+  <!-- Mapbox Geocoder API -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id='map'></div>
+  <div id='console'>
+    <h1>Air Quality Index - PM2.5 Levels</h1>
+    <p>Data: <a href='https://uk-air.defra.gov.uk//'>Air Quality Index Data </a> for Scotland and England, 2025</p>
+
+    <!–– Slider goes below––>
+      <div class='session' id='sliderbar'>
+        <h2>Month: <label id='active-month'>2023-11</label></h2>
+        <input id='slider' class='row' type='range' min='1' max='15' step='1' value='1' />
+      </div>
+
+      <div class="session" id="zone-selector">
+        <h2>Zone:</h2>
+        <select id="zone">
+          <option value="all">All</option>
+          <option value="North East Scotland">North East Scotland</option>
+          <option value="Central Scotland">Central Scotland</option>
+          <option value="Yorkshire & Humberside">Yorkshire & Humberside</option>
+          <option value="North West & Merseyside">North West & Merseyside</option>
+          <option value="West Midlands">West Midlands</option>
+          <option value="South West">South West</option>
+          <option value="South East">South East</option>
+          <option value="Eastern">Eastern</option>
+          <option value="Greater London">Greater London</option>
+          <option value="East Midlands">East Midlands</option>
+          <option value="Highland">Highland</option>
+          <option value="North East">North East</option>
+        </select>
+      </div>
+  </div>
+
+  <div id="legend">
+    <strong>PM2.5 Levels</strong>
+    <div id="gradient"></div>
+    <div id="legend-labels">
+      <span>0</span>
+      <span>10</span>
+      <span>20</span>
+      <span>30</span>
+      <span>40</span>
+      <span>50+</span>
+    </div>
+
+</body>
+
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
